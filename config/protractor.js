@@ -1,4 +1,15 @@
+var config = require('./config')();
+
 exports.config = {
+  sauceUser: config.sauceUser,
+  sauceKey: config.sauceKey,
+  capabilities: {
+    'name': config.sauceTestName,
+    'browserName': 'chrome',
+    'tunnel-identifier': config.travisJobNumber,
+    'build': config.travisBuild
+  },
+
   specs: ['../test/e2e/**/*.js'],
   onPrepare: function(){
     browser.driver.get('http://localhost:3000').then(function(){
@@ -6,9 +17,9 @@ exports.config = {
       browser.driver.findElement(by.id('entrar')).click();
       browser.driver.sleep(1);
       browser.driver.findElement(by.id('login_field'))
-        .sendKeys('boa50');
+        .sendKeys(config.seleniumUser);
       browser.driver.findElement(by.id('password'))
-        .sendKeys('titobelau50');
+        .sendKeys(config.seleniumUserPassword);
       browser.driver.findElement(by.name('commit')).click();
     });
   }

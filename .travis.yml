@@ -1,8 +1,13 @@
 language: node.js
+env:
+  global:
+    - NODE_ENV: test
+addons:
+  sauce_connect: true
 node_js:
   - 0.10
-#notifications:
-#  - bruno.albuquerque50@gmail.com
+notifications:
+  - bruno.albuquerque50@gmail.com
 before_install:
   - npm install -g bower@1.3
   - npm install -g grunt-cli@0.1
@@ -12,7 +17,12 @@ before_install:
   - bower install
 install: npm install
 before_script:
+  - node test/data.js
   - grunt
   - cd dist
 script:
   - karma start config/karma.config.js --single-run --browsers PhantomJS
+  - node server &
+  - protractor config/protractor.js
+services:
+  - mongodb
