@@ -10,6 +10,7 @@ before_install:
   - npm install -g protractor@1.5
   - webdriver-manager update
   - bower install
+install: npm install
 before_script:
   - grunt
   - cd dist
