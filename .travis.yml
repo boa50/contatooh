@@ -34,7 +34,8 @@ before_deploy:
 deploy:
   provider: openshift
   user: bruno.albuquerque50@gmail.com
-  password: '891014'
+  password:
+    secure: mryxhxg0K4TznH8BrDq+IF5rBZgV+hDdOJhofYgifCc6EB7g7yGPXDnv6Z/hgvfKrWW64Yglvy1aEHAWLuTqkoQf3bxS98qPMX43l2KW16zAAmXgncW9vaND/MYHswhckYXpDI06VGuPaNDj+jJWEWaTlIjqcyJwhug3pz7DU3n+O/ZrRjBTesIZq5AbgdplC8HfC3AnW7FdTNg9qPvkWl+8xqNTPwzenbIIo2DQhPLpDpben9+p2Pq0UYozfYXZk2fYGXwUl8vyDFBNeDYdXT1ii3EJQyHbKd/3CFYzu/oGMazfwxfuZbwGEnC6Ll1UJ0src2cYF+2y9P3PYLzXwjsoNgJQodVYBUvAgVzD84Oebw6/RGXfPonw0F5iaF8SlBbsND2KnNF9EXelc+8PD2bPNj/IhU0J6iTBQIexACVfUGB8xa/2MJqFuIUiohV5m7gXioH33b37Fc+tO/Rm4rMrJVa38g6Q4zJ8WAG9CPgN3JJpnx06D/Uz7TuNWRPItmcqxap+XUfLHFOm01Rls5k8tlHjtwkFAFYfDSmoL0sgG05YIvGl9y/F2Bsl5ulHKr7xRGZK1Yr69rYft5l+Wb3f/3LJzEiraZVg5eCoMk83aJV3nk/hHPAZYWisnVHpk9YpB54SuzxglqjLPwff1k5T7BiUZZ2pQK/gcRyDo3E=
   app: contatooh
   domain: boa50
   on:
