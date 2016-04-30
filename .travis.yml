@@ -26,17 +26,17 @@ script:
 services:
 - mongodb
 before_deploy:
-  - git config --global user.email 'travis@travis-ci.com'
-  - git config --global user.name 'Travis CI'
-  - git checkout $TRAVIS_BRANCH
-  - git add --all
-  - git commit -am "Travis commits"
+- git config --global user.email 'travis@travis-ci.com'
+- git config --global user.name 'Travis CI'
+- git checkout $TRAVIS_BRANCH
+- git add --all
+- git commit -am "Travis commits"
 deploy:
   provider: openshift
-  user: bruno.albuquerque50@gmail.com
+  user: bruno.albuquerque50@gmai.com
   password:
-    secure: Yp0JUA3uU9bXqFfZv/opnSPCGQSomLE2iEY6WCMPOhSfPpjvdVT0C2xQLDrWsi0fUErs0QMShnnh3BHm1ptmHqcaKeGhPaGMvM4SLzzhJXAtvqXZ1UACLgSaH+BxGPM++aWFWEx9Hyk49/JkU/r1gn5ocz3dQP0FM2ctgxgW64cHVBn2ziKoDnH0omIxfLwRk/wlHTPk8zF5E2e0NapSmdh0am85BWa6fdCFszR2UZUNu9nMZClG7rp4AQHiuZ40Ma8J9WAGutg1x8y9T6XrvvgDNbR6o+TYzdOQxjBLUc3uZLnNnETtLY1RCIHYw4gQssJ0sVfzj4UuPdS6fXGgW5BH+6F87jNqv3Hub1ot9LNPOxonD0ba1HhuxtecuYuXuvc45lHwtNImjgHWMaK9kTwy4/cUrJhKMUesz1tYv202waHZ/XUnj5Xak+LjsaMDRajtg2P66FLcIcHmU8kQgMVZkJWNi+1Mptqln5chOXaBVdqxa4DPjOJDJsYQD2cnyhPQRBswaMj+qb+UFoGpqJVGpi6YpnJPbaRSuJv/YM5bBoHixSRPMxl6QSqTBAJBYE9JocCheAHTi+6TWXtkS6Mo/ykeEHE092dzvh5ZMUGGVCP6B8p8CDo3pI/MBjAQ+wE5ObMev6cqlQ+CVQnCkI4pER23iyyd4H4icU9R2bk=
+    secure: Q/eWT81GYoBBDu3F9VWy4dIUJEMdpWKqBgGM4EEONpugpmI5bDBlx1pb83I41BhWQOWZtBZJ7ani1Y/0lPmMlJf3CCZFtPUoCX7zt9xRw/N9ZB2tcOGOqro4+4RpWQinTFBkfFeltnAqpA3lOquirjnedzME5mDX69lCevuE6cWZaaZdjTUPzn4omZnsbK1yyov5niYfrYKRh19tZcVUGhY4VCisrzAKPyEr36KIRys1g5Qemmxs8zDky0qHmfTvvILrNLrWDIkZlz1r33jwwgIokrBp/S0tRsxBqxhlHrwEWzloeet+rXcOFDW+EYtZqL2KLq2Te/q22ertVSA49RnkS1nGkfBcpx6OUQq0xH7VSOXxfebbeuQOTB/GN92Dmi+Rqp8OIKTKDD88NlfOOVoriSF1WR6eL+HAMxHK7S7c21KKwb9KvaZWbzs7Y5ugYZ2iYRuOFH/Mxa+TNuQwdaab9nM90i5VwbYGP1qEnHOQUbxBox8mhWsSg+s8V5dgW0ArJ8am09gpdoiaR2ec5vHODk4OVJ+vpRzV4frBdu8RuZ1iSFMBaybpiOR3oZibE/wJImn6Nqw08D2mHAn1FsQohtatEkzIPO44ygKrhR3yeDijBY8qsaT1StA4LArhe0Wu5X7rMOwlz+vYaRZ+2puHWs7ZDb53K3jajoe3A38=
   app: contatooh
-  domain: contatooh-boa50.rhcloud.com
+  domain: boa50
   on:
     repo: boa50/contatooh
