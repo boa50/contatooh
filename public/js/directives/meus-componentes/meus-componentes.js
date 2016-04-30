@@ -8,14 +8,27 @@ angular.module('meusComponentes', [])
     titulo: '@'
   };
 
+  directive.transclude = true;
+
+  directive.templateUrl = 'js/directives/meus-componentes/meu-painel.html';
+
+  return directive;
+})
+.directive('meuBotaoAviso', function(){
+  var directive = {};
+
+  directive.restrict = 'E';
+
+  directive.scope = {
+    nome: '@',
+    acao: '&'
+  };
+
   directive.template =
-    '<div class="panel panel-default">' +
-    ' <div class="panel-heading">' +
-    '   <h3 class="panel-title">{{titulo}}</h3>' +
-    ' </div>' +
-    ' <div class="panel-body">' +
-    ' </div>' +
-    '</div>';
+    '<button ng-click="acao()" class="btn btn-warning">' +
+    ' {{nome}}' +
+    '</button>';
+
 
   return directive;
 });
