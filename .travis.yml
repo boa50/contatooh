@@ -1,28 +1,42 @@
 language: node.js
 env:
   global:
-    - NODE_ENV: test
+  - NODE_ENV: test
 addons:
   sauce_connect: true
 node_js:
-  - 0.10
+- 0.1
 notifications:
-  - bruno.albuquerque50@gmail.com
+- bruno.albuquerque50@gmail.com
 before_install:
-  - npm install -g bower@1.3
-  - npm install -g grunt-cli@0.1
-  - npm install -g karma-cli@0.0
-  - npm install -g protractor@1.5
-  - webdriver-manager update
-  - bower install
+- npm install -g bower@1.3
+- npm install -g grunt-cli@0.1
+- npm install -g karma-cli@0.0
+- npm install -g protractor@1.5
+- webdriver-manager update
+- bower install
 install: npm install
 before_script:
-  - node test/data.js
-  - grunt
-  - cd dist
+- node test/data.js
+- grunt minifica
 script:
-  - karma start config/karma.config.js --single-run --browsers PhantomJS
-  - node server &
-  - protractor config/protractor.js
+- karma start config/karma.config.js --single-run --browsers PhantomJS
+- node server &
+- protractor config/protractor.js
 services:
-  - mongodb
+- mongodb
+deploy:
+  provider: openshift
+  user: bruno.albuquerque50@gmail.com
+  password:
+    secure: Yp0JUA3uU9bXqFfZv/opnSPCGQSomLE2iEY6WCMPOhSfPpjvdVT0C2xQLDrWsi0fUErs0QMShnnh3BHm1ptmHqcaKeGhPaGMvM4SLzzhJXAtvqXZ1UACLgSaH+BxGPM++aWFWEx9Hyk49/JkU/r1gn5ocz3dQP0FM2ctgxgW64cHVBn2ziKoDnH0omIxfLwRk/wlHTPk8zF5E2e0NapSmdh0am85BWa6fdCFszR2UZUNu9nMZClG7rp4AQHiuZ40Ma8J9WAGutg1x8y9T6XrvvgDNbR6o+TYzdOQxjBLUc3uZLnNnETtLY1RCIHYw4gQssJ0sVfzj4UuPdS6fXGgW5BH+6F87jNqv3Hub1ot9LNPOxonD0ba1HhuxtecuYuXuvc45lHwtNImjgHWMaK9kTwy4/cUrJhKMUesz1tYv202waHZ/XUnj5Xak+LjsaMDRajtg2P66FLcIcHmU8kQgMVZkJWNi+1Mptqln5chOXaBVdqxa4DPjOJDJsYQD2cnyhPQRBswaMj+qb+UFoGpqJVGpi6YpnJPbaRSuJv/YM5bBoHixSRPMxl6QSqTBAJBYE9JocCheAHTi+6TWXtkS6Mo/ykeEHE092dzvh5ZMUGGVCP6B8p8CDo3pI/MBjAQ+wE5ObMev6cqlQ+CVQnCkI4pER23iyyd4H4icU9R2bk=
+  app: contatooh
+  domain: contatooh-boa50.rhcloud.com
+  on:
+    repo: boa50/contatooh
+before_deploy:
+  - git config --global user.email 'travis@travis-ci.com'
+  - git config --global user.name 'Travis CI'
+  - git checkout $TRAVIS_BRANCH
+  - git add --all
+  - git commit -am "Travis commits"
