@@ -33,9 +33,8 @@ before_deploy:
 - git commit -am "Travis commits"
 deploy:
   provider: openshift
-  user: bruno.albuquerque50@gmai.com
-  password:
-    secure: Q/eWT81GYoBBDu3F9VWy4dIUJEMdpWKqBgGM4EEONpugpmI5bDBlx1pb83I41BhWQOWZtBZJ7ani1Y/0lPmMlJf3CCZFtPUoCX7zt9xRw/N9ZB2tcOGOqro4+4RpWQinTFBkfFeltnAqpA3lOquirjnedzME5mDX69lCevuE6cWZaaZdjTUPzn4omZnsbK1yyov5niYfrYKRh19tZcVUGhY4VCisrzAKPyEr36KIRys1g5Qemmxs8zDky0qHmfTvvILrNLrWDIkZlz1r33jwwgIokrBp/S0tRsxBqxhlHrwEWzloeet+rXcOFDW+EYtZqL2KLq2Te/q22ertVSA49RnkS1nGkfBcpx6OUQq0xH7VSOXxfebbeuQOTB/GN92Dmi+Rqp8OIKTKDD88NlfOOVoriSF1WR6eL+HAMxHK7S7c21KKwb9KvaZWbzs7Y5ugYZ2iYRuOFH/Mxa+TNuQwdaab9nM90i5VwbYGP1qEnHOQUbxBox8mhWsSg+s8V5dgW0ArJ8am09gpdoiaR2ec5vHODk4OVJ+vpRzV4frBdu8RuZ1iSFMBaybpiOR3oZibE/wJImn6Nqw08D2mHAn1FsQohtatEkzIPO44ygKrhR3yeDijBY8qsaT1StA4LArhe0Wu5X7rMOwlz+vYaRZ+2puHWs7ZDb53K3jajoe3A38=
+  user: bruno.albuquerque50@gmail.com
+  password: '891014'
   app: contatooh
   domain: boa50
   on:
