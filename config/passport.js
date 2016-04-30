@@ -8,7 +8,10 @@ module.exports = function(){
   var Usuario = mongoose.model('Usuario');
 
   // var githubCallback = 'http://' + config.domain + ':' + config.port + '/auth/github/callback';
-  var githubCallback = 'http://' + config.domain + '/auth/github/callback';
+  if(config.env == 'production')
+    var githubCallback = 'http://' + config.domain + '/auth/github/callback';
+  else
+    var githubCallback = 'http://' + config.domain + ':' + config.port + '/auth/github/callback';
 
   passport.use(new GitHubStrategy({
     clientID: config.clientID,
