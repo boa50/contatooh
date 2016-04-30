@@ -38,11 +38,7 @@ module.exports = function(config) {
     preprocessors: {
       '../public/js/directives/**/*.html': 'ng-html2js'
     },
-
-    // PLUGINS ADICIONADOS MANUALMENTE
-    // plugins: [
-    //   'karma-ng-html2js-preprocessor'
-    // ],
+    
 
     //ADICIONADO MANUALMENTE PARA O PREPROCESSADOR
     ngHtml2JsPreprocessor: {
